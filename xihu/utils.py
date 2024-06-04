@@ -48,25 +48,6 @@ def parse_into_expr(
         expr = pl.lit(expr, dtype=dtype)
     return expr
 
-
-def register_plugin(
-    *,
-    symbol: str,
-    is_elementwise: bool,
-    kwargs: dict[str, Any] | None = None,
-    args: list[IntoExpr],
-    lib: str | Path,
-) -> pl.Expr:
-    from polars.plugins import register_plugin_function
-
-    return register_plugin_function(
-        args=args,
-        plugin_path=lib,
-        function_name=symbol,
-        kwargs=kwargs,
-        is_elementwise=is_elementwise,
-    )
-
 def parse_version(version: Sequence[str | int]) -> tuple[int, ...]:
     # Simple version parser; split into a tuple of ints for comparison.
     # vendored from Polars

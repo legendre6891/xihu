@@ -8,7 +8,7 @@ name = "xihu"
 crate-type= ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.21.2", features = ["extension-module", "abi3-py312"] }
+pyo3 = { version = "0.21.2", features = ["extension-module", "abi3-py39"] }
 pyo3-polars = { version = "0.13.0", features = ["derive"] }
 serde = { version = "1", features = ["derive"] }
 polars = { version = "0.39.2", default-features = false }
